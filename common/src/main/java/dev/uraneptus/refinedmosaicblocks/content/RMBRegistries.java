@@ -17,7 +17,7 @@ public class RMBRegistries {
     private static final RegHelper REG = RMBServices.REG;
     public static List<Block> REG_INDEX;
 
-    public static final Supplier<Block> MOSAIC_BLOCK = registerBlockAndItem("mosaic_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_GLAZED_TERRACOTTA)), new Item.Properties());
+    public static final Supplier<Block> MOSAIC_BLOCK = registerBlockAndItem("mosaic_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_GLAZED_TERRACOTTA)));
     public static final Supplier<Block> ARROW_MOSAIC_BLOCK = registerMosaicBlock("arrow_mosaic_block");
     public static final Supplier<Block> BOWL_MOSAIC_BLOCK = registerMosaicBlock("bowl_mosaic_block");
     public static final Supplier<Block> CORNER_MOSAIC_BLOCK = registerMosaicBlock("corner_mosaic_block");
@@ -37,16 +37,14 @@ public class RMBRegistries {
 
     public static void init() {}
 
-    static Supplier<Block> registerBlockAndItem(String id, Supplier<Block> blockSupplier, Item.Properties itemProperties) {
+    static Supplier<Block> registerBlockAndItem(String id, Supplier<Block> blockSupplier) {
         Supplier<Block> block = REG.registerBlock(id, blockSupplier);
-        REG.registerItem(id, () -> new BlockItem(block.get(), itemProperties));
+        REG.registerItem(id, () -> new BlockItem(block.get(), new Item.Properties()));
         return block;
     }
 
     static Supplier<Block> registerMosaicBlock(String id) {
-        return registerBlockAndItem(id, () -> new MosaicBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_GLAZED_TERRACOTTA)),
-                new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(MosaicBlock.COLOR, MosaicColor.WHITE))
-        );
+        return registerBlockAndItem(id, () -> new MosaicBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_GLAZED_TERRACOTTA)));
     }
 
     public static void initRegIndex() {

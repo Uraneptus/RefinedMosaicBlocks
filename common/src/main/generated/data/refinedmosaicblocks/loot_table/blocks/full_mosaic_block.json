@@ -11,15 +11,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "block": "refinedmosaicblocks:full_mosaic_block",
-              "function": "minecraft:copy_state",
-              "properties": [
-                "color"
-              ]
-            }
-          ],
           "name": "refinedmosaicblocks:full_mosaic_block"
         }
       ],

@@ -4,24 +4,18 @@ import com.mojang.serialization.MapCodec;
 import dev.uraneptus.refinedmosaicblocks.RMBConstants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -31,7 +25,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class MosaicBlock extends HorizontalDirectionalBlock {
@@ -47,9 +40,11 @@ public class MosaicBlock extends HorizontalDirectionalBlock {
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (pState.hasProperty(COLOR) && !pLevel.isClientSide()) {
             ItemStack itemInHand = pPlayer.getItemInHand(pHand);
+            MosaicColor currentColor = pState.getValue(COLOR);
             if (MosaicColor.isDyeItem(itemInHand)) {
-                if (itemInHand.getItem() != pState.getValue(COLOR).getDyeItem()) {
-                    pLevel.setBlock(pPos, pState.setValue(COLOR, MosaicColor.getColorFromItem(itemInHand)), Block.UPDATE_ALL);
+                if (!currentColor.isSameDye(itemInHand.getItem())) {
+                    MosaicColor itemColor = MosaicColor.getColorFromItem(itemInHand);
+                    pLevel.setBlock(pPos, pState.setValue(COLOR, itemColor), Block.UPDATE_ALL);
                     if (pLevel.random.nextFloat() < (20 /*TODO config here*/ / 100.0f) && !pPlayer.isCreative()) {
                         pPlayer.getItemInHand(pHand).shrink(1);
                         pLevel.playSound(null, pPos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 0.5f, 1.0F);
@@ -70,14 +65,6 @@ public class MosaicBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
-        ItemStack itemStack = new ItemStack(this);
-        MosaicColor color = state.getValue(COLOR);
-        itemStack.set(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(COLOR, color));
-        return itemStack;
-    }
-
-    @Override
     protected BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
         if (pState.hasProperty(COLOR) && !pLevel.isClientSide()) {
             if (pNeighborState.getBlock() == Blocks.WET_SPONGE) {
@@ -85,17 +72,6 @@ public class MosaicBlock extends HorizontalDirectionalBlock {
             }
         }
         return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        BlockItemStateProperties blockItemStateProperties = stack.getOrDefault(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY);
-        if (blockItemStateProperties.isEmpty()) return;
-
-        if (blockItemStateProperties.get(COLOR) != null) {
-            MosaicColor color = blockItemStateProperties.get(COLOR);
-            tooltipComponents.add(Component.literal(RMBConstants.createTranslation(color.getSerializedName())).withColor(color.getDecimalColor()));
-        }
     }
 
     @Override

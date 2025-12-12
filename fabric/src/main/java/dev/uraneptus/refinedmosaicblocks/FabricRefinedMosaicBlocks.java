@@ -19,7 +19,7 @@ public class FabricRefinedMosaicBlocks implements ModInitializer {
     private static void addToItemGroup() {
         RMBRegistries.REG_INDEX.forEach(item -> {
             ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
-                entries.accept(item.get());
+                entries.accept(item);
             });
         });
     }

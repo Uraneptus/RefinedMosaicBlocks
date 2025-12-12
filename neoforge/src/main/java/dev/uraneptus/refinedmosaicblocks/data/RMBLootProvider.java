@@ -50,21 +50,7 @@ public class RMBLootProvider extends LootTableProvider {
         @Override
         protected void generate() {
             this.dropSelf(RMBRegistries.MOSAIC_BLOCK.get());
-            MosaicBlock.getMosaicBlocks().forEach(block -> this.add(block, createPatternedMosaicLoot(block)));
+            MosaicBlock.getMosaicBlocks().forEach(this::dropSelf);
         }
-
-        protected LootTable.Builder createPatternedMosaicLoot(Block pBlock) {
-            return LootTable.lootTable().withPool(
-                    this.applyExplosionCondition(pBlock,
-                            LootPool.lootPool()
-                                    .setRolls(ConstantValue.exactly(1.0F))
-                                    .add(LootItem.lootTableItem(pBlock)
-                                            .apply(CopyBlockState.copyState(pBlock).copy(MosaicBlock.COLOR))
-                                    )
-                    )
-            );
-        }
-
-
     }
 }

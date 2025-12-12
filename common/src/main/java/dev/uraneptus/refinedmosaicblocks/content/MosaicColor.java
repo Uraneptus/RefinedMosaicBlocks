@@ -1,41 +1,42 @@
 package dev.uraneptus.refinedmosaicblocks.content;
 
 import dev.uraneptus.refinedmosaicblocks.RMBConstants;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
-import java.util.Arrays;
-
 public enum MosaicColor implements StringRepresentable {
-    WHITE("white", 0, Items.WHITE_DYE, 16777215),
-    ORANGE("orange", 1, Items.ORANGE_DYE, 16738335),
-    MAGENTA("magenta", 2, Items.MAGENTA_DYE, 16711935),
-    LIGHT_BLUE("light_blue", 3, Items.LIGHT_BLUE_DYE, 10141901),
-    YELLOW("yellow", 4, Items.YELLOW_DYE, 16776960),
-    LIME("lime", 5, Items.LIME_DYE, 12582656),
-    PINK("pink", 6, Items.PINK_DYE, 16738740),
-    GRAY("gray", 7, Items.GRAY_DYE, 8421504),
-    LIGHT_GRAY("light_gray", 8, Items.LIGHT_GRAY_DYE, 13882323),
-    CYAN("cyan", 9, Items.CYAN_DYE, 65535),
-    PURPLE("purple", 10, Items.PURPLE_DYE, 10494192),
-    BLUE("blue", 11, Items.BLUE_DYE, 255),
-    BROWN("brown", 12, Items.BROWN_DYE, 9127187),
-    GREEN("green", 13, Items.GREEN_DYE, 65280),
-    RED("red", 14, Items.RED_DYE, 16711680),
-    BLACK("black", 15, Items.BLACK_DYE, 2631720);
+    WHITE("white", 0, "minecraft:white_dye"),
+    ORANGE("orange", 1, "minecraft:orange_dye"),
+    MAGENTA("magenta", 2, "minecraft:magenta_dye"),
+    LIGHT_BLUE("light_blue", 3, "minecraft:light_blue_dye"),
+    YELLOW("yellow", 4, "minecraft:yellow_dye"),
+    LIME("lime", 5, "minecraft:lime_dye"),
+    PINK("pink", 6, "minecraft:pink_dye"),
+    GRAY("gray", 7, "minecraft:gray_dye"),
+    LIGHT_GRAY("light_gray", 8, "minecraft:light_gray_dye"),
+    CYAN("cyan", 9, "minecraft:cyan_dye"),
+    PURPLE("purple", 10, "minecraft:purple_dye"),
+    BLUE("blue", 11, "minecraft:blue_dye"),
+    BROWN("brown", 12, "minecraft:brown_dye"),
+    GREEN("green", 13, "minecraft:green_dye"),
+    RED("red", 14, "minecraft:red_dye"),
+    BLACK("black", 15, "minecraft:black_dye"),
+    MAROON("maroon", 16, "dye_depot:maroon_dye"),
+    ROSE("rose", 17, "dye_depot:rose_dye"),
+    ;
 
     private final String name;
     private final int indexNumber;
-    private final Item dyeItem;
-    private final int decimalColor;
+    private final String dyeItemName;
 
-    MosaicColor(String name, int indexNumber, Item dyeItem, int decimalColor) {
+    MosaicColor(String name, int indexNumber, String dyeItemName) {
         this.name = name;
         this.indexNumber = indexNumber;
-        this.dyeItem = dyeItem;
-        this.decimalColor = decimalColor;
+        this.dyeItemName = dyeItemName;
     }
 
     @Override
@@ -47,19 +48,24 @@ public enum MosaicColor implements StringRepresentable {
         return this.indexNumber;
     }
 
-    public Item getDyeItem() {
-        return this.dyeItem;
+    public String getDyeItemName() {
+        return this.dyeItemName;
+    }
+
+    public boolean isSameDye(Item item) {
+        return BuiltInRegistries.ITEM.getKey(item).toString().equals(this.getDyeItemName());
     }
 
     public static boolean isDyeItem(ItemStack item) {
         return item.is(RMBConstants.DYES_TAG);
     }
 
-    public int getDecimalColor() {
-        return decimalColor;
-    }
-
     public static MosaicColor getColorFromItem(ItemStack item) {
-        return Arrays.stream(MosaicColor.values()).filter(color -> color.getDyeItem() == item.getItem()).toList().getFirst();
+        for (MosaicColor color : MosaicColor.values()) {
+            if (BuiltInRegistries.ITEM.getKey(item.getItem()).toString().equals(color.getDyeItemName())) {
+                return color;
+            }
+        }
+        return WHITE;
     }
 }

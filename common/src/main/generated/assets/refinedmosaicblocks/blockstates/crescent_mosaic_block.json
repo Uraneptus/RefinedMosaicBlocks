@@ -150,6 +150,21 @@
       "model": "refinedmosaicblocks:block/magenta_crescent",
       "y": 270
     },
+    "color=maroon,facing=east": {
+      "model": "refinedmosaicblocks:block/maroon_crescent",
+      "y": 90
+    },
+    "color=maroon,facing=north": {
+      "model": "refinedmosaicblocks:block/maroon_crescent"
+    },
+    "color=maroon,facing=south": {
+      "model": "refinedmosaicblocks:block/maroon_crescent",
+      "y": 180
+    },
+    "color=maroon,facing=west": {
+      "model": "refinedmosaicblocks:block/maroon_crescent",
+      "y": 270
+    },
     "color=orange,facing=east": {
       "model": "refinedmosaicblocks:block/orange_crescent",
       "y": 90
@@ -208,6 +223,21 @@
     },
     "color=red,facing=west": {
       "model": "refinedmosaicblocks:block/red_crescent",
+      "y": 270
+    },
+    "color=rose,facing=east": {
+      "model": "refinedmosaicblocks:block/rose_crescent",
+      "y": 90
+    },
+    "color=rose,facing=north": {
+      "model": "refinedmosaicblocks:block/rose_crescent"
+    },
+    "color=rose,facing=south": {
+      "model": "refinedmosaicblocks:block/rose_crescent",
+      "y": 180
+    },
+    "color=rose,facing=west": {
+      "model": "refinedmosaicblocks:block/rose_crescent",
       "y": 270
     },
     "color=white,facing=east": {
