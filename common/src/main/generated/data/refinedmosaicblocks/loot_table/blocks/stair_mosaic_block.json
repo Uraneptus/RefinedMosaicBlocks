@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "block": "refinedmosaicblocks:stair_mosaic_block",
+              "function": "minecraft:copy_state",
+              "properties": [
+                "color"
+              ]
+            }
+          ],
+          "name": "refinedmosaicblocks:stair_mosaic_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "refinedmosaicblocks:blocks/stair_mosaic_block"
+}

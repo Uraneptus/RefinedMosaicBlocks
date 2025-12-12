@@ -1,0 +1,21 @@
+{
+  "values": [
+    "refinedmosaicblocks:arrow_mosaic_block",
+    "refinedmosaicblocks:bowl_mosaic_block",
+    "refinedmosaicblocks:corner_mosaic_block",
+    "refinedmosaicblocks:crescent_mosaic_block",
+    "refinedmosaicblocks:downward_point_mosaic_block",
+    "refinedmosaicblocks:downward_slope_mosaic_block",
+    "refinedmosaicblocks:fold_mosaic_block",
+    "refinedmosaicblocks:full_mosaic_block",
+    "refinedmosaicblocks:half_mosaic_block",
+    "refinedmosaicblocks:quarter_mosaic_block",
+    "refinedmosaicblocks:round_mosaic_block",
+    "refinedmosaicblocks:stair_mosaic_block",
+    "refinedmosaicblocks:triangle_mosaic_block",
+    "refinedmosaicblocks:upward_point_mosaic_block",
+    "refinedmosaicblocks:upward_slope_mosaic_block",
+    "refinedmosaicblocks:wedge_mosaic_block",
+    "refinedmosaicblocks:mosaic_block"
+  ]
+}

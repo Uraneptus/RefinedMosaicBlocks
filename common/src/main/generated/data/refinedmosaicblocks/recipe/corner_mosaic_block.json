@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "mosaic_block",
+  "ingredient": {
+    "item": "refinedmosaicblocks:mosaic_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "refinedmosaicblocks:corner_mosaic_block"
+  }
+}

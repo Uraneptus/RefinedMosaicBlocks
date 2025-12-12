@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "refinedmosaicblocks:block/mosaic_block"
+      },
+      {
+        "model": "refinedmosaicblocks:block/mosaic_block_90"
+      },
+      {
+        "model": "refinedmosaicblocks:block/mosaic_block_180"
+      },
+      {
+        "model": "refinedmosaicblocks:block/mosaic_block_270"
+      }
+    ]
+  }
+}

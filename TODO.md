@@ -1,0 +1,4 @@
+- Add loot tables
+- Add recipes
+- Make block item hold color information when breaking it and when using middle mouse button in creative
+- make dye depot compatible

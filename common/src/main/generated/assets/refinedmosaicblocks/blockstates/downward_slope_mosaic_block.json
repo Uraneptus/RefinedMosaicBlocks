@@ -1,0 +1,244 @@
+{
+  "variants": {
+    "color=black,facing=east": {
+      "model": "refinedmosaicblocks:block/black_downward_slope",
+      "y": 90
+    },
+    "color=black,facing=north": {
+      "model": "refinedmosaicblocks:block/black_downward_slope"
+    },
+    "color=black,facing=south": {
+      "model": "refinedmosaicblocks:block/black_downward_slope",
+      "y": 180
+    },
+    "color=black,facing=west": {
+      "model": "refinedmosaicblocks:block/black_downward_slope",
+      "y": 270
+    },
+    "color=blue,facing=east": {
+      "model": "refinedmosaicblocks:block/blue_downward_slope",
+      "y": 90
+    },
+    "color=blue,facing=north": {
+      "model": "refinedmosaicblocks:block/blue_downward_slope"
+    },
+    "color=blue,facing=south": {
+      "model": "refinedmosaicblocks:block/blue_downward_slope",
+      "y": 180
+    },
+    "color=blue,facing=west": {
+      "model": "refinedmosaicblocks:block/blue_downward_slope",
+      "y": 270
+    },
+    "color=brown,facing=east": {
+      "model": "refinedmosaicblocks:block/brown_downward_slope",
+      "y": 90
+    },
+    "color=brown,facing=north": {
+      "model": "refinedmosaicblocks:block/brown_downward_slope"
+    },
+    "color=brown,facing=south": {
+      "model": "refinedmosaicblocks:block/brown_downward_slope",
+      "y": 180
+    },
+    "color=brown,facing=west": {
+      "model": "refinedmosaicblocks:block/brown_downward_slope",
+      "y": 270
+    },
+    "color=cyan,facing=east": {
+      "model": "refinedmosaicblocks:block/cyan_downward_slope",
+      "y": 90
+    },
+    "color=cyan,facing=north": {
+      "model": "refinedmosaicblocks:block/cyan_downward_slope"
+    },
+    "color=cyan,facing=south": {
+      "model": "refinedmosaicblocks:block/cyan_downward_slope",
+      "y": 180
+    },
+    "color=cyan,facing=west": {
+      "model": "refinedmosaicblocks:block/cyan_downward_slope",
+      "y": 270
+    },
+    "color=gray,facing=east": {
+      "model": "refinedmosaicblocks:block/gray_downward_slope",
+      "y": 90
+    },
+    "color=gray,facing=north": {
+      "model": "refinedmosaicblocks:block/gray_downward_slope"
+    },
+    "color=gray,facing=south": {
+      "model": "refinedmosaicblocks:block/gray_downward_slope",
+      "y": 180
+    },
+    "color=gray,facing=west": {
+      "model": "refinedmosaicblocks:block/gray_downward_slope",
+      "y": 270
+    },
+    "color=green,facing=east": {
+      "model": "refinedmosaicblocks:block/green_downward_slope",
+      "y": 90
+    },
+    "color=green,facing=north": {
+      "model": "refinedmosaicblocks:block/green_downward_slope"
+    },
+    "color=green,facing=south": {
+      "model": "refinedmosaicblocks:block/green_downward_slope",
+      "y": 180
+    },
+    "color=green,facing=west": {
+      "model": "refinedmosaicblocks:block/green_downward_slope",
+      "y": 270
+    },
+    "color=light_blue,facing=east": {
+      "model": "refinedmosaicblocks:block/light_blue_downward_slope",
+      "y": 90
+    },
+    "color=light_blue,facing=north": {
+      "model": "refinedmosaicblocks:block/light_blue_downward_slope"
+    },
+    "color=light_blue,facing=south": {
+      "model": "refinedmosaicblocks:block/light_blue_downward_slope",
+      "y": 180
+    },
+    "color=light_blue,facing=west": {
+      "model": "refinedmosaicblocks:block/light_blue_downward_slope",
+      "y": 270
+    },
+    "color=light_gray,facing=east": {
+      "model": "refinedmosaicblocks:block/light_gray_downward_slope",
+      "y": 90
+    },
+    "color=light_gray,facing=north": {
+      "model": "refinedmosaicblocks:block/light_gray_downward_slope"
+    },
+    "color=light_gray,facing=south": {
+      "model": "refinedmosaicblocks:block/light_gray_downward_slope",
+      "y": 180
+    },
+    "color=light_gray,facing=west": {
+      "model": "refinedmosaicblocks:block/light_gray_downward_slope",
+      "y": 270
+    },
+    "color=lime,facing=east": {
+      "model": "refinedmosaicblocks:block/lime_downward_slope",
+      "y": 90
+    },
+    "color=lime,facing=north": {
+      "model": "refinedmosaicblocks:block/lime_downward_slope"
+    },
+    "color=lime,facing=south": {
+      "model": "refinedmosaicblocks:block/lime_downward_slope",
+      "y": 180
+    },
+    "color=lime,facing=west": {
+      "model": "refinedmosaicblocks:block/lime_downward_slope",
+      "y": 270
+    },
+    "color=magenta,facing=east": {
+      "model": "refinedmosaicblocks:block/magenta_downward_slope",
+      "y": 90
+    },
+    "color=magenta,facing=north": {
+      "model": "refinedmosaicblocks:block/magenta_downward_slope"
+    },
+    "color=magenta,facing=south": {
+      "model": "refinedmosaicblocks:block/magenta_downward_slope",
+      "y": 180
+    },
+    "color=magenta,facing=west": {
+      "model": "refinedmosaicblocks:block/magenta_downward_slope",
+      "y": 270
+    },
+    "color=orange,facing=east": {
+      "model": "refinedmosaicblocks:block/orange_downward_slope",
+      "y": 90
+    },
+    "color=orange,facing=north": {
+      "model": "refinedmosaicblocks:block/orange_downward_slope"
+    },
+    "color=orange,facing=south": {
+      "model": "refinedmosaicblocks:block/orange_downward_slope",
+      "y": 180
+    },
+    "color=orange,facing=west": {
+      "model": "refinedmosaicblocks:block/orange_downward_slope",
+      "y": 270
+    },
+    "color=pink,facing=east": {
+      "model": "refinedmosaicblocks:block/pink_downward_slope",
+      "y": 90
+    },
+    "color=pink,facing=north": {
+      "model": "refinedmosaicblocks:block/pink_downward_slope"
+    },
+    "color=pink,facing=south": {
+      "model": "refinedmosaicblocks:block/pink_downward_slope",
+      "y": 180
+    },
+    "color=pink,facing=west": {
+      "model": "refinedmosaicblocks:block/pink_downward_slope",
+      "y": 270
+    },
+    "color=purple,facing=east": {
+      "model": "refinedmosaicblocks:block/purple_downward_slope",
+      "y": 90
+    },
+    "color=purple,facing=north": {
+      "model": "refinedmosaicblocks:block/purple_downward_slope"
+    },
+    "color=purple,facing=south": {
+      "model": "refinedmosaicblocks:block/purple_downward_slope",
+      "y": 180
+    },
+    "color=purple,facing=west": {
+      "model": "refinedmosaicblocks:block/purple_downward_slope",
+      "y": 270
+    },
+    "color=red,facing=east": {
+      "model": "refinedmosaicblocks:block/red_downward_slope",
+      "y": 90
+    },
+    "color=red,facing=north": {
+      "model": "refinedmosaicblocks:block/red_downward_slope"
+    },
+    "color=red,facing=south": {
+      "model": "refinedmosaicblocks:block/red_downward_slope",
+      "y": 180
+    },
+    "color=red,facing=west": {
+      "model": "refinedmosaicblocks:block/red_downward_slope",
+      "y": 270
+    },
+    "color=white,facing=east": {
+      "model": "refinedmosaicblocks:block/white_downward_slope",
+      "y": 90
+    },
+    "color=white,facing=north": {
+      "model": "refinedmosaicblocks:block/white_downward_slope"
+    },
+    "color=white,facing=south": {
+      "model": "refinedmosaicblocks:block/white_downward_slope",
+      "y": 180
+    },
+    "color=white,facing=west": {
+      "model": "refinedmosaicblocks:block/white_downward_slope",
+      "y": 270
+    },
+    "color=yellow,facing=east": {
+      "model": "refinedmosaicblocks:block/yellow_downward_slope",
+      "y": 90
+    },
+    "color=yellow,facing=north": {
+      "model": "refinedmosaicblocks:block/yellow_downward_slope"
+    },
+    "color=yellow,facing=south": {
+      "model": "refinedmosaicblocks:block/yellow_downward_slope",
+      "y": 180
+    },
+    "color=yellow,facing=west": {
+      "model": "refinedmosaicblocks:block/yellow_downward_slope",
+      "y": 270
+    }
+  }
+}
