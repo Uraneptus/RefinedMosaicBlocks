@@ -2,11 +2,9 @@ package dev.uraneptus.refinedmosaicblocks.content;
 
 import dev.uraneptus.refinedmosaicblocks.RMBConstants;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public enum MosaicColor implements StringRepresentable {
     WHITE("white", 0, "minecraft:white_dye"),

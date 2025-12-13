@@ -15,5 +15,6 @@
   "block.refinedmosaicblocks.triangle_mosaic_block": "Triangle Mosaic Block",
   "block.refinedmosaicblocks.upward_point_mosaic_block": "Upward Point Mosaic Block",
   "block.refinedmosaicblocks.upward_slope_mosaic_block": "Upward Slope Mosaic Block",
-  "block.refinedmosaicblocks.wedge_mosaic_block": "Wedge Mosaic Block"
+  "block.refinedmosaicblocks.wedge_mosaic_block": "Wedge Mosaic Block",
+  "gamerule.dye_consume_chance": "Chance for consuming dye when coloring Mosaic"
 }

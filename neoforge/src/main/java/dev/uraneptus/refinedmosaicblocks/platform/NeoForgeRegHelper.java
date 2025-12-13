@@ -3,11 +3,13 @@ package dev.uraneptus.refinedmosaicblocks.platform;
 import dev.uraneptus.refinedmosaicblocks.RMBConstants;
 import dev.uraneptus.refinedmosaicblocks.platform.services.RegHelper;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
 public class NeoForgeRegHelper implements RegHelper {
@@ -27,5 +29,10 @@ public class NeoForgeRegHelper implements RegHelper {
     @Override
     public <T extends GameRules.Value<T>> GameRules.Key<T> registerGameRule(String name, GameRules.Category category, GameRules.Type<T> type) {
         return GameRules.register(name, category, type);
+    }
+
+    @Override
+    public GameRules.Type<GameRules.IntegerValue> createIntRule(int pDefaultValue, int pMin, int pMax, BiConsumer<MinecraftServer, GameRules.IntegerValue> pChangeListener) {
+        return GameRules.IntegerValue.create(pDefaultValue, pMin, pMax, pChangeListener);
     }
 }

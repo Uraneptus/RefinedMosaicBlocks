@@ -19,5 +19,6 @@ public class RMBLangProvider extends LanguageProvider {
             add(block, RMBConstants.createTranslation(BuiltInRegistries.BLOCK.getKey(block).getPath()));
         });
         add(RMBRegistries.MOSAIC_BLOCK.get(), "Mosaic Block");
+        add("gamerule.dye_consume_chance", "Chance for consuming dye when coloring Mosaic");
     }
 }

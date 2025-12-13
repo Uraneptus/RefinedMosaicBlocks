@@ -10,7 +10,6 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
-import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
 public class RMBBlockTagsProvider extends BlockTagsProvider {

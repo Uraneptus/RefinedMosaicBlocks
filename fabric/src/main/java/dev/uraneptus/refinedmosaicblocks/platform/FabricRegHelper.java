@@ -6,10 +6,12 @@ import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.Block;
 
+import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
 public class FabricRegHelper implements RegHelper {
@@ -30,5 +32,10 @@ public class FabricRegHelper implements RegHelper {
     @Override
     public <T extends GameRules.Value<T>> GameRules.Key<T> registerGameRule(String name, GameRules.Category category, GameRules.Type<T> type) {
         return GameRuleRegistry.register(name, category, type);
+    }
+
+    @Override
+    public GameRules.Type<GameRules.IntegerValue> createIntRule(int pDefaultValue, int pMin, int pMax, BiConsumer<MinecraftServer, GameRules.IntegerValue> pChangeListener) {
+        return GameRuleFactory.createIntRule(pDefaultValue, pMin, pMax, pChangeListener);
     }
 }

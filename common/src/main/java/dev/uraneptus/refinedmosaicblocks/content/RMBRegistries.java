@@ -2,10 +2,8 @@ package dev.uraneptus.refinedmosaicblocks.content;
 
 import dev.uraneptus.refinedmosaicblocks.platform.RMBServices;
 import dev.uraneptus.refinedmosaicblocks.platform.services.RegHelper;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -36,7 +34,7 @@ public class RMBRegistries {
     public static final Supplier<Block> UPWARD_SLOPE_MOSAIC_BLOCK = registerMosaicBlock("upward_slope_mosaic_block");
     public static final Supplier<Block> WEDGE_MOSAIC_BLOCK = registerMosaicBlock("wedge_mosaic_block");
 
-    public static final GameRules.Key<GameRules.IntegerValue> DYE_CONSUME_CHANCE = REG.registerGameRule("dye_consume_chance", GameRules.Category.PLAYER, GameRules.IntegerValue.create(20, 0, 100, (server, integerValue) -> {}));
+    public static final GameRules.Key<GameRules.IntegerValue> DYE_CONSUME_CHANCE = REG.registerGameRule("dye_consume_chance", GameRules.Category.PLAYER, REG.createIntRule(20, 0, 100, (server, integerValue) -> {}));
 
     public static void init() {}
 
