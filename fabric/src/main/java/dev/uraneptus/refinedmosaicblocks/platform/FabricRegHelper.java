@@ -2,9 +2,12 @@ package dev.uraneptus.refinedmosaicblocks.platform;
 
 import dev.uraneptus.refinedmosaicblocks.RMBConstants;
 import dev.uraneptus.refinedmosaicblocks.platform.services.RegHelper;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
@@ -22,5 +25,10 @@ public class FabricRegHelper implements RegHelper {
         I object = item.get();
         Registry.register(BuiltInRegistries.ITEM, RMBConstants.modPrefix(id), object);
         return () -> object;
+    }
+
+    @Override
+    public <T extends GameRules.Value<T>> GameRules.Key<T> registerGameRule(String name, GameRules.Category category, GameRules.Type<T> type) {
+        return GameRuleRegistry.register(name, category, type);
     }
 }

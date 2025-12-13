@@ -45,7 +45,7 @@ public class MosaicBlock extends HorizontalDirectionalBlock {
                 if (!currentColor.isSameDye(itemInHand.getItem())) {
                     MosaicColor itemColor = MosaicColor.getColorFromItem(itemInHand);
                     pLevel.setBlock(pPos, pState.setValue(COLOR, itemColor), Block.UPDATE_ALL);
-                    if (pLevel.random.nextFloat() < (20 /*TODO config here*/ / 100.0f) && !pPlayer.isCreative()) {
+                    if (pLevel.random.nextFloat() < (pLevel.getGameRules().getInt(RMBRegistries.DYE_CONSUME_CHANCE) / 100.0f) && !pPlayer.isCreative()) {
                         pPlayer.getItemInHand(pHand).shrink(1);
                         pLevel.playSound(null, pPos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 0.5f, 1.0F);
                         for(int i = 0; i < 7; ++i) {

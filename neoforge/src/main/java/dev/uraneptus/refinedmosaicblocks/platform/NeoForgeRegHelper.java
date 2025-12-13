@@ -4,6 +4,7 @@ import dev.uraneptus.refinedmosaicblocks.RMBConstants;
 import dev.uraneptus.refinedmosaicblocks.platform.services.RegHelper;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -21,5 +22,10 @@ public class NeoForgeRegHelper implements RegHelper {
     @Override
     public <I extends Item> Supplier<I> registerItem(String id, Supplier<I> item) {
         return ITEMS.register(id, item);
+    }
+
+    @Override
+    public <T extends GameRules.Value<T>> GameRules.Key<T> registerGameRule(String name, GameRules.Category category, GameRules.Type<T> type) {
+        return GameRules.register(name, category, type);
     }
 }

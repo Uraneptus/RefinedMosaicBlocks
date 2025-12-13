@@ -27,7 +27,20 @@ public enum MosaicColor implements StringRepresentable {
     BLACK("black", 15, "minecraft:black_dye"),
     MAROON("maroon", 16, "dye_depot:maroon_dye"),
     ROSE("rose", 17, "dye_depot:rose_dye"),
-    ;
+    CORAL("coral", 18, "dye_depot:coral_dye"),
+    INDIGO("indigo", 19, "dye_depot:indigo_dye"),
+    NAVY("navy", 20, "dye_depot:navy_dye"),
+    SLATE("slate", 21, "dye_depot:slate_dye"),
+    OLIVE("olive", 22, "dye_depot:olive_dye"),
+    AMBER("amber", 23, "dye_depot:amber_dye"),
+    BEIGE("beige", 24, "dye_depot:beige_dye"),
+    TEAL("teal", 25, "dye_depot:teal_dye"),
+    MINT("mint", 26, "dye_depot:mint_dye"),
+    AQUA("aqua", 27, "dye_depot:aqua_dye"),
+    VERDANT("verdant", 28, "dye_depot:verdant_dye"),
+    FOREST("forest", 29, "dye_depot:forest_dye"),
+    GINGER("ginger", 30, "dye_depot:ginger_dye"),
+    TAN("tan", 31, "dye_depot:tan_dye");
 
     private final String name;
     private final int indexNumber;
