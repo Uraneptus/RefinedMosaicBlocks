@@ -59,6 +59,10 @@ public class MosaicBlock extends HorizontalDirectionalBlock {
                     }
                     return ItemInteractionResult.SUCCESS;
                 }
+            } else if (itemInHand.isEmpty() && pPlayer.isShiftKeyDown()) {
+                Direction direction = pState.getValue(FACING);
+                pLevel.setBlock(pPos, pState.setValue(FACING, direction.getClockWise()), Block.UPDATE_ALL);
+                return ItemInteractionResult.SUCCESS;
             }
         }
         return super.useItemOn(pStack, pState, pLevel, pPos, pPlayer, pHand, pHitResult);
