@@ -34,7 +34,7 @@ public class RMBBlockStateProvider extends BlockStateProvider {
 
             String name = color.name().toLowerCase() + "_" + pattern;
 
-            ModelFile modelFile = models().withExistingParent(name, name(Blocks.WHITE_GLAZED_TERRACOTTA))
+            ModelFile modelFile = models().withExistingParent(name, "minecraft:block/template_glazed_terracotta")
                     .texture("pattern", modBlockLocation(name));
 
             return ConfiguredModel.builder()
@@ -51,7 +51,7 @@ public class RMBBlockStateProvider extends BlockStateProvider {
                 int rotNum = 90 * i;
                 String suffix = rotNum != 0 ? "_" + rotNum : "";
                 ModelFile modelFile = models()
-                        .withExistingParent(name(block) + suffix, name(Blocks.WHITE_GLAZED_TERRACOTTA))
+                        .withExistingParent(name(block) + suffix, "minecraft:block/template_glazed_terracotta")
                         .texture("pattern", modBlockLocation(name(block) + suffix));
                 files[i] = modelFile;
             }
